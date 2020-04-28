@@ -11,7 +11,8 @@ SOURCEDIR=*
 # First back up the old files
 echo "Backing up old files and folders..."
 # Create a copy of the config files
-cp -r $DESTDIR $DESTDIR.bak
+# p flag preserves permissions and ownerships
+cp -rp $DESTDIR $DESTDIR.bak
 echo "Backup done!"
 
 # Now copy the new configs
