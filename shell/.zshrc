@@ -149,6 +149,8 @@ preexec() {
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim="nvim"
+alias vi="nvim"
 
 #ZSH_TMUX_AUTOSTART_ONCE="true"
 #ZSH_TMUX_AUTOCONNECT="true"
