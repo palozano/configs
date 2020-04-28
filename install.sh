@@ -4,25 +4,23 @@
 # to be able to install the file
 
 # Set where to copy the files 
-DESTDIR=~/.config/
+DESTDIR=$HOME/.config/
 # This is the folder where the script is "${0%/*}"
 SOURCEDIR=*
 
 # First back up the old files
 echo "Backing up old files and folders..."
-
-for file in $SOURCEDIR
-do
-  mv $DESTDIR/$file $DESTDIR/$file.bak
-done
-
+# Create a copy of the config files
+cp -r $DESTDIR $DESTDIR.bak
 echo "Backup done!"
 
+# Now copy the new configs
 echo "Copying new configuration files..."
 
+mkdir $DESTDIR/alacritty $DESTDIR/editor $DESTDIR/shell
 for file in $SOURCEDIR
 do
-  mv file $destination_folder/
+  cp file $DESTDIR/
 done
 
 echo "Finished copying!"
