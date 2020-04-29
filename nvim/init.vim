@@ -13,10 +13,10 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-Plug 'sirver/ultisnips'
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+"Plug 'sirver/ultisnips'
+"let g:UltiSnipsExpandTrigger = '<tab>'
+"let g:UltiSnipsJumpForwardTrigger = '<tab>'
+"let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 Plug 'itchyny/lightline.vim'
 
@@ -28,7 +28,7 @@ Plug 'scrooloose/nerdcommenter'
 
 "Plug 'vim-scripts/indentpython.vim'
 
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 " Syntax checking/highlighting
 "Plug 'vim-syntastic/syntastic'
@@ -127,9 +127,9 @@ set encoding=utf-8
 
 " For YouCompleteMe plugin...
 " ...window goes away when you're done
-let g:ycm_autoclose_preview_window_after_completion=1
+"let g:ycm_autoclose_preview_window_after_completion=1
 " ...shortcut for goto definition
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Virtualenv support
 "py << EOF
