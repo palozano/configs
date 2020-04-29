@@ -147,10 +147,19 @@ preexec() {
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+#alias zshconfig="mate ~/.zshrc"
+#alias ohmyzsh="mate ~/.oh-my-zsh"
+# Editor
 alias vim="nvim"
 alias vi="nvim"
+# Listing files
+alias ls="exa"
+alias l="exa -hlaum --git"
+alias ll="exa -hlum --git"
+alias lr="exa -R"
+alias lt="exa -T"
+unalias la
+unalias lsa
 
 #ZSH_TMUX_AUTOSTART_ONCE="true"
 #ZSH_TMUX_AUTOCONNECT="true"
@@ -175,10 +184,10 @@ unset __conda_setup
 export=PATH=~/anaconda3/bin:$PATH
 
 # Find-in-file fuzzy finder
-fif() {
-  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
-  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
-}
+#fif() {
+  #if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  #rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+#}
 
 # Options for fuzzy finder
 export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --preview "head -100 {}"'
