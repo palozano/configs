@@ -59,6 +59,8 @@ Mendeley Ltd./
 menus/
 mimeapps.list
 nautilus/
+nvim/.vimdid/
+nvim/plugins/
 omf/
 pulse/
 QtProject.conf

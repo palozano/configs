@@ -14,7 +14,7 @@ ZSH_THEME="spaceship"
 # To remove "(base)" from promt, run this: conda config --set changeps1 false
 
 # Export 256 colors
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
