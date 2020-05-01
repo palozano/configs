@@ -179,7 +179,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 # alias for Anaconda3
 export=PATH=~/anaconda3/bin:$PATH
 
