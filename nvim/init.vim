@@ -2,9 +2,6 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 set nocompatible               " be improved, required
 filetype off                   " required
 
-" Remap leader key
-let mapleader = "\<Space>"
-
 
 " VIM-PLUG MANAGER
 " ================
@@ -18,27 +15,32 @@ set conceallevel=1
 let g:tex_conceal='abdmg'
 let g:vimtex_compiler_progname = 'nvr'
 
+" Better statusline 
 Plug 'itchyny/lightline.vim'
 
+" Colorscheme
 Plug 'sainnhe/gruvbox-material'
 
+" Clever commenter
 Plug 'scrooloose/nerdcommenter'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'sheerun/vim-polyglot'
 
-Plug 'sheerun/vim-polyglot'
-
+" File tree in editor
 Plug 'scrooloose/nerdtree'
-
-" Real fuzzy search
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
 
 "Highlighting sections of writing
 Plug 'junegunn/limelight.vim'
+
+" Real fuzzy search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Conquer Of Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -47,9 +49,11 @@ call plug#end()
 " SOME SETTINGS
 " ====================
 syntax enable
-set rnu
+set relativenumber
+set number
 set ts=4
 "set tw=80
+set colorcolumn=80
 set expandtab
 set autoindent
 set wildmenu
@@ -61,6 +65,12 @@ set ttimeoutlen=0
 set laststatus=2
 set noshowmode
 set hidden
+" Make diffing better: https://vimways.org/2018/the-power-of-diff/
+set diffopt+=algorithm:patience
+set diffopt+=indent-heuristic
+set colorcolumn=80 " and give me a colored column
+set showcmd " Show (partial) command in status line.
+set mouse=a " Enable mouse usage (all modes) in terminals
 " Sane splits
 set splitright
 set splitbelow
@@ -76,6 +86,36 @@ set encoding=utf-8
 set clipboard=unnamed
 
 
+" REMAPS
+" ======
+" Remap leader key
+let mapleader = "\<Space>"
+
+" Move between wrapped lines
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> 0 g0
+noremap <silent> $ g$
+
+" ESC wit jj
+:imap jj <Esc>
+
+" No arrow keys --- force yourself to use the home row
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Left and right can switch buffers
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+
+" Toggle to previous buffer
+nnoremap <leader><leader> <c-^>
+
+
 " GUI ENHANCEMENTS
 " ================
 " Set nice colors for 256 terminal
@@ -85,7 +125,7 @@ endif
 
 "let g:lightline = {'colorscheme' : 'gruvbox_material'}
 
-" Show Coc environment
+" Show Coc environment in the status line
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
@@ -107,6 +147,9 @@ set background=dark
 let g:gruvbox_material_background = 'medium'
 colorscheme gruvbox-material
 
+" Open NERDTree with a shortcut
+map <C-n> :NERDTreeToggle<CR>
+
 " Open NERDTree when opening a folder
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
@@ -115,26 +158,16 @@ colorscheme gruvbox-material
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Open NERDTree with a shortcut
-map <C-n> :NERDTreeToggle<CR>
-
-
-" REMAPS
-" ======
-" Move between wrapped lines
-noremap <silent> k gk
-noremap <silent> j gj
-noremap <silent> 0 g0
-noremap <silent> $ g$
-" toggles between buffers
-nnoremap <leader><leader> <c-^>
-" ESC wit jj
-:imap jj <Esc>
-
-" PYTHON DEVELOPING
-" =================
-" Python provider
-"let g:loaded_python3_provider=1
+" Use Ripgrep to use grep strings and show results with FZF
+" Remap <leader>s for Rg search
+noremap <leader>s :Rg
+let g:fzf_layout = { 'down': '~35%' }
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
 
 " CONQUER OF COMPLETION
