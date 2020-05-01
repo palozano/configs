@@ -49,22 +49,37 @@ call plug#end()
 " SOME SETTINGS
 " ====================
 syntax enable
+" Show numbers
 set relativenumber
 set number
-set ts=4
-"set tw=80
-set colorcolumn=80
+" Use wide tabs
+set shiftwidth=8
+set softtabstop=8
+set tabstop=8
 set expandtab
+
+set colorcolumn=80
 set autoindent
+
+" Decent wildmenu
 set wildmenu
+set wildmode=list:longest
+" Brackets
 set showmatch
+" Proper search
 set incsearch
+set ignorecase
+set smartcase
+set gdefault
 set nohlsearch
+
 set linebreak
 set ttimeoutlen=0
 set laststatus=2
 set noshowmode
 set hidden
+" No whitespace in vimdiff
+set diffopt+=iwhite 
 " Make diffing better: https://vimways.org/2018/the-power-of-diff/
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
