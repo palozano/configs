@@ -83,7 +83,23 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-let g:lightline = {'colorscheme' : 'gruvbox_material'}
+"let g:lightline = {'colorscheme' : 'gruvbox_material'}
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
+" Show Coc environment
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox_material',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'cocstatus': 'coc#status',
+      \   'currentfunction': 'CocCurrentFunction'
+      \ },
+      \ }
 
 set termguicolors
 set background=dark
@@ -111,7 +127,8 @@ noremap <silent> 0 g0
 noremap <silent> $ g$
 " toggles between buffers
 nnoremap <leader><leader> <c-^>
-
+" ESC wit jj
+:imap jj <Esc>
 
 " PYTHON DEVELOPING
 " =================
@@ -135,7 +152,9 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 " Python host
-let g:python3_host_prog="/home/pablo/anaconda3/bin/python"
+"let g:python3_host_prog="/home/pablo/anaconda3/bin/python"
+" Python interpreter
+let g:python_interpreter="/home/pablo/anaconda3/bin/python"
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
