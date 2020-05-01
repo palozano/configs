@@ -130,11 +130,12 @@ function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
 
+" [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ]
 let g:lightline = {
       \ 'colorscheme': 'gruvbox_material',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
       \ },
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
