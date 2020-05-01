@@ -84,11 +84,12 @@ if !has('gui_running')
 endif
 
 "let g:lightline = {'colorscheme' : 'gruvbox_material'}
+
+" Show Coc environment
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
 
-" Show Coc environment
 let g:lightline = {
       \ 'colorscheme': 'gruvbox_material',
       \ 'active': {
