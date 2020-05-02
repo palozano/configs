@@ -204,7 +204,7 @@ set signcolumn=yes
 " Python host
 "let g:python3_host_prog="/home/pablo/anaconda3/bin/python"
 " Python interpreter
-let g:python_interpreter="/home/pablo/anaconda3/bin/python"
+"let g:python_interpreter="/home/pablo/anaconda3/bin/python"
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
