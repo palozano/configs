@@ -166,7 +166,7 @@ unalias lsa
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/pablo/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/pablo/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -183,10 +183,10 @@ unset __conda_setup
 export=PATH=~/anaconda3/bin:$PATH
 
 # Find-in-file fuzzy finder
-#fif() {
-  #if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
-  #rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
-#}
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
 
 # Options for fuzzy finder
 export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --preview "head -100 {}"'
