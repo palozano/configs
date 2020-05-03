@@ -180,7 +180,12 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # alias for Anaconda3
-export=PATH=~/anaconda3/bin:$PATH
+export PATH=~/anaconda3/bin:$PATH
+#export=PATH=~/anaconda3/bin:$PATH
+
+# open pycharm from anywhere
+export PATH=/opt/pycharm-2020.1/bin:$PATH
+
 
 # Find-in-file fuzzy finder
 fif() {

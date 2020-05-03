@@ -99,6 +99,8 @@ set foldlevel=99
 set encoding=utf-8
 " Use the system clipboard
 set clipboard=unnamed
+" Set spelling
+"set spell
 
 
 " REMAPS
