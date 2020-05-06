@@ -72,6 +72,8 @@ set ignorecase
 set smartcase
 set gdefault
 set nohlsearch
+" Highlight current line
+set cursorline
 
 set linebreak
 set ttimeoutlen=0
@@ -173,8 +175,8 @@ map <C-n> :NERDTreeToggle<CR>
 "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 
 " Open NERDTree when no argument is given
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Use Ripgrep to use grep strings and show results with FZF
 " Remap <leader>s for Rg search
@@ -187,6 +189,9 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
+" Run python file with F5
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
 
 " CONQUER OF COMPLETION
 " =====================

@@ -160,6 +160,7 @@ alias lr="exa -R"
 alias lt="exa -T"
 unalias la
 unalias lsa
+alias tsm="transmission-remote"
 
 #ZSH_TMUX_AUTOSTART_ONCE="true"
 #ZSH_TMUX_AUTOCONNECT="true"
