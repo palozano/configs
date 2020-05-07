@@ -100,9 +100,7 @@ set foldlevel=99
 " Use UTF-8 support
 set encoding=utf-8
 " Use the system clipboard
-set clipboard=unnamed
-" Set spelling
-"set spell
+set clipboard+=unnamedplus
 
 
 " REMAPS
@@ -134,6 +132,11 @@ nnoremap <right> :bn<CR>
 " Toggle to previous buffer
 nnoremap <leader><leader> <c-^>
 
+" Indent with only one stroke
+noremap > >>
+noremap < <<
+vnoremap > >gv
+vnoremap < <gv
 
 " GUI ENHANCEMENTS
 " ================
