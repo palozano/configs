@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/pablo/.oh-my-zsh"
+export ZSH="/home/palozano/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -158,8 +158,8 @@ alias l="exa -hlaum --git"
 alias ll="exa -hlum --git"
 alias lr="exa -R"
 alias lt="exa -T"
-unalias la
-unalias lsa
+#unalias la
+#unalias lsa
 alias tsm="transmission-remote"
 
 #ZSH_TMUX_AUTOSTART_ONCE="true"
@@ -167,14 +167,14 @@ alias tsm="transmission-remote"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/pablo/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/palozano/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/pablo/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/pablo/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/palozano/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/palozano/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/pablo/anaconda3/bin:$PATH"
+        export PATH="/home/palozano/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
