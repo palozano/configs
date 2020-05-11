@@ -19,7 +19,8 @@ let g:vimtex_compiler_progname = 'nvr'
 Plug 'itchyny/lightline.vim'
 
 " Colorscheme
-Plug 'sainnhe/gruvbox-material'
+"Plug 'sainnhe/gruvbox-material'
+Plug 'arcticicestudio/nord-vim'
 
 " Clever commenter
 Plug 'scrooloose/nerdcommenter'
@@ -154,7 +155,7 @@ endfunction
 
 " [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ]
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox_material',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
@@ -165,10 +166,11 @@ let g:lightline = {
       \ },
       \ }
 
-set termguicolors
-set background=dark
-let g:gruvbox_material_background = 'medium'
-colorscheme gruvbox-material
+"set termguicolors
+"set background=dark
+"let g:nord_background = 'medium'
+"colorscheme gruvbox-material
+colorscheme nord
 
 " Open NERDTree with a shortcut
 map <C-n> :NERDTreeToggle<CR>
