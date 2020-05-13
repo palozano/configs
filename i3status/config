@@ -1,0 +1,84 @@
+general {
+        output_format = "i3bar"
+        colors = false
+        markup = pango
+        interval = 5
+        color_good = '#2f343f'
+	color_degraded = '#ebcb8b'
+	color_bad = '#ba5e57'
+}
+
+order += "cpu_temperature 0"
+order += "load"
+order += "cpu_usage"
+# order += "disk /"
+# order += "disk /home"
+# order += "ethernet enp1s0"
+order += "wireless wlp2s0"
+order += "volume master"
+order += "battery all"
+order += "tztime local"
+order += "ipv6"
+
+cpu_usage {
+        format = "<span background='#8e9a74'> use %usage </span>"
+}
+
+load {
+        format = "<span background='#b6924e'> load %1min </span>"
+}
+
+cpu_temperature 0 {
+        format = "<span background='#bf616a'> %degrees °C </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+wireless wlp2s0 {
+        format_up = "<span background='#8a6783'> wifi %essid </span>"
+        format_down = "<span background='#170e36'> wifi disconnected </span>"
+}
+
+battery all {
+        # format = "%status %percentage %remaining %emptytime</span>"
+        format = "<span background='#638e85'> %status %percentage</span>"
+        format_down = "No battery"
+        last_full_capacity = true
+        integer_battery_capacity = true
+        # status_chr = ""
+        status_chr = "⚡"
+        # status_bat = "bat"
+        # status_bat = "☉"
+        status_bat = ""
+        # status_unk = "?"
+        status_unk = ""
+        # status_full = ""
+        status_full = "☻"
+        low_threshold = 15
+        threshold_type = time
+}
+
+tztime local {
+	format = "<span background='#392f5a'> %time </span>"
+	format_time = "%a %-d %b %H:%M"
+}
+
+volume master {
+        format = "<span background='#ae8e61'> vol %volume </span>"
+        format_muted = "<span background='#170e36'> Muted </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+#ethernet enp1s0 {
+#        format_up = "<span background='#88c0d0'> cable %ip </span>"
+#        format_down = "<span background='#88c0d0'> disconnected </span>"
+#}
+
+#disk "/home" {
+#        format = "<span background='#a1d569'> %free op </span>"
+#}
+
+#disk "/" {
+#        format = "<span background='#fec7cd'> %free free </span>"
+#}

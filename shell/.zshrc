@@ -187,6 +187,9 @@ export PATH=~/anaconda3/bin:$PATH
 # open pycharm from anywhere
 export PATH=/opt/pycharm-2020.1/bin:$PATH
 
+# Editor
+export VISUAL=nvim
+export EDITOR=nvim
 
 # Find-in-file fuzzy finder
 fif() {
