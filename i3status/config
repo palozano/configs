@@ -40,7 +40,7 @@ wireless wlp2s0 {
 
 battery all {
         # format = "%status %percentage %remaining %emptytime</span>"
-        format = "<span background='#638e85'> %status %percentage</span>"
+        format = "<span background='#638e85'> %status %percentage </span>"
         format_down = "No battery"
         last_full_capacity = true
         integer_battery_capacity = true
