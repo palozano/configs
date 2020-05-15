@@ -10,6 +10,7 @@ export ZSH="/home/palozano/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="spaceship"
+#ZSH_THEME="bira"
 
 # To remove "(base)" from promt, run this: conda config --set changeps1 false
 
@@ -78,7 +79,7 @@ plugins=(git
          colored-man-pages
          zsh-autosuggestions
          zsh-syntax-highlighting
-         vi-mode
+         #vi-mode
          #command-time
          #tmux
          )
