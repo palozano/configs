@@ -19,8 +19,8 @@ let g:vimtex_compiler_progname = 'nvr'
 Plug 'itchyny/lightline.vim'
 
 " Colorscheme
-"Plug 'sainnhe/gruvbox-material'
-Plug 'arcticicestudio/nord-vim'
+Plug 'sainnhe/gruvbox-material'
+"Plug 'arcticicestudio/nord-vim'
 
 " Clever commenter
 Plug 'scrooloose/nerdcommenter'
@@ -62,6 +62,9 @@ set expandtab
 set colorcolumn=80
 set autoindent
 
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="80,".join(range(120,999),",")
+
 " Decent wildmenu
 set wildmenu
 set wildmode=list:longest
@@ -78,7 +81,8 @@ set cursorline
 
 set linebreak
 set ttimeoutlen=0
-set laststatus=2
+"set laststatus=2
+set laststatus=0
 set noshowmode
 set hidden
 " No whitespace in vimdiff
@@ -167,10 +171,11 @@ let g:lightline = {
       \ }
 
 "set termguicolors
-"set background=dark
+set background=dark
 "let g:nord_background = 'medium'
-"colorscheme gruvbox-material
-colorscheme nord
+colorscheme gruvbox-material
+"colorscheme monokai
+"colorscheme nord
 
 " Open NERDTree with a shortcut
 map <C-n> :NERDTreeToggle<CR>

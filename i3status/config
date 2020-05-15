@@ -16,7 +16,7 @@ order += "cpu_usage"
 # order += "ethernet enp1s0"
 order += "wireless wlp2s0"
 order += "volume master"
-order += "battery all"
+#order += "battery all"
 order += "tztime local"
 order += "ipv6"
 
@@ -33,7 +33,7 @@ cpu_temperature 0 {
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
-wireless wlp2s0 {
+wireless wlp4s0 {
         format_up = "<span background='#8a6783'> wifi %essid </span>"
         format_down = "<span background='#170e36'> wifi disconnected </span>"
 }
