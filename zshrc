@@ -9,8 +9,10 @@ export ZSH="/home/palozano/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="spaceship"
+#ZSH_THEME="spaceship"
 #ZSH_THEME="bira"
+ZSH_THEME="juanghurtado"
+#ZSH_THEME="mh"
 
 # To remove "(base)" from promt, run this: conda config --set changeps1 false
 
@@ -186,7 +188,7 @@ export PATH=~/anaconda3/bin:$PATH
 #export=PATH=~/anaconda3/bin:$PATH
 
 # open pycharm from anywhere
-export PATH=/opt/pycharm-2020.1/bin:$PATH
+#export PATH=/opt/pycharm-2020.1/bin:$PATH
 
 # Editor
 export VISUAL=nvim

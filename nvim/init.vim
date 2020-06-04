@@ -81,9 +81,9 @@ set cursorline
 
 set linebreak
 set ttimeoutlen=0
-"set laststatus=2
-set laststatus=0
-set noshowmode
+set laststatus=2
+"set laststatus=0
+"set noshowmode
 set hidden
 " No whitespace in vimdiff
 set diffopt+=iwhite 
@@ -105,7 +105,7 @@ set foldlevel=99
 " Use UTF-8 support
 set encoding=utf-8
 " Use the system clipboard
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 
 " REMAPS
@@ -123,12 +123,12 @@ noremap <silent> $ g$
 :imap jj <Esc>
 
 " No arrow keys --- force yourself to use the home row
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 
 " Left and right can switch buffers
 nnoremap <left> :bp<CR>
@@ -159,9 +159,9 @@ endfunction
 
 " [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ]
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'jellybeans',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
+      \   'left': [ [  ],
       \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
       \ },
       \ 'component_function': {
