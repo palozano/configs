@@ -6,7 +6,7 @@
   title_use_system_font = False
   title_font = Fira Code 11
 [keybindings]
-  layout_launcher = <Shift><Alt>l
+  layout_launcher = <Shift><Super>l
 [profiles]
   [[default]]
     background_color = "#282828"

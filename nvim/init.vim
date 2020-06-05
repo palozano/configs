@@ -43,10 +43,6 @@ Plug 'junegunn/fzf.vim'
 " Conquer Of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" You also have vim-gitgutter installed
-" https://vimawesome.com/plugin/vim-gitgutter
-Plug 'airblade/vim-gitgutter'
-
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -165,25 +161,14 @@ endfunction
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
-      \   'left': [ [], [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
+      \   'left': [ [  ],
+      \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
       \ },
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
       \   'currentfunction': 'CocCurrentFunction'
       \ },
       \ }
-
-"let g:lightline = {
-      "\ 'colorscheme': 'jellybeans',
-      "\ 'active': {
-      "\   'left': [ [ 'mode', 'paste' ],
-      "\             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
-      "\ },
-      "\ 'component_function': {
-      "\   'cocstatus': 'coc#status',
-      "\   'currentfunction': 'CocCurrentFunction'
-      "\ },
-      "\ }
 
 "set termguicolors
 set background=dark
@@ -227,7 +212,7 @@ set nowritebackup
 "set cmdheight=2
 " Longer updatetime (default 4000ms) leads to
 " poor user experience.
-set updatetime=200
+set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
@@ -264,7 +249,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 "endif
 
 " Use `[g` and `]g` to navigate diagnostics
-" `g
+" [g
 nmap <silent> `g <Plug>(coc-diagnostic-prev)
 " +g
 nmap <silent> +g <Plug>(coc-diagnostic-next)
@@ -356,3 +341,5 @@ nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
