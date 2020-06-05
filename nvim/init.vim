@@ -87,7 +87,7 @@ set linebreak
 set ttimeoutlen=0
 set laststatus=2
 "set laststatus=0
-set showmode
+"set noshowmode
 set hidden
 " No whitespace in vimdiff
 set diffopt+=iwhite 
