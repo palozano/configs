@@ -8,11 +8,15 @@ export ZSH="/home/palozano/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="spaceship"
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="spaceship"
 #ZSH_THEME="bira"
+#ZSH_THEME="lambda"
+#ZSH_THEME="mh"
+ZSH_THEME="juanghurtado"
 
 # To remove "(base)" from promt, run this: conda config --set changeps1 false
+# or make ir permanent by configuring ~/.condarc
 
 # Export 256 colors
 #export TERM=xterm-256color
@@ -152,7 +156,7 @@ preexec() {
 #alias ohmyzsh="mate ~/.oh-my-zsh"
 # Editor
 alias vim="nvim"
-alias vi="nvim"
+#alias vi="nvim"
 # Listing files
 alias ls="exa"
 alias l="exa -hlaum --git"
@@ -161,7 +165,6 @@ alias lr="exa -R"
 alias lt="exa -T"
 #unalias la
 #unalias lsa
-alias tsm="transmission-remote"
 
 #ZSH_TMUX_AUTOSTART_ONCE="true"
 #ZSH_TMUX_AUTOCONNECT="true"
@@ -199,6 +202,8 @@ fif() {
 }
 
 # Options for fuzzy finder
-export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --preview "head -100 {}"'
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --preview "bat --style=numbers --color=always {} | head -500"'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#eval "$(starship init zsh)"
