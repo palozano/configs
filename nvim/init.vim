@@ -43,6 +43,9 @@ Plug 'junegunn/fzf.vim'
 " Conquer Of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Vim-gutter
+Plug 'airblade/vim-gitgutter'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
