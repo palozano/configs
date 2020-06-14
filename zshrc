@@ -204,3 +204,5 @@ fif() {
 export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --preview "head -100 {}"'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+neofetch

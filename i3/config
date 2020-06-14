@@ -236,9 +236,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+m bar mode toggle
 
 # Change brightness
-bindsym XF86MonBrightnessUp exec "sudo xbacklight -inc 10"
-bindsym XF86MonBrightnessDown exec "sudo xbacklight -dec 10"
+#bindsym XF86MonBrightnessUp exec "sudo xbacklight -inc 10"
+#bindsym XF86MonBrightnessDown exec "sudo xbacklight -dec 10"
 
+bindsym XF86MonBrightnessUp exec "brightnessctl +10"
+bindsym XF86MonBrightnessDown exec "brightnessctl -10"
 ##############
 
 
