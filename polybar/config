@@ -59,7 +59,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 ;modules-center = mpd
-modules-right = pulseaudio filesystem memory cpu wlan battery temperature date powermenu
+modules-right = pulseaudio filesystem memory cpu wlan battery temperature gpu date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -356,6 +356,19 @@ format-warn-underline = ${self.format-underline}
 label = %temperature-c%
 label-warn = WARNING %temperature-c%
 label-warn-foreground = ${colors.secondary}
+
+
+
+[module/gpu]
+type = custom/script
+label = %output% C
+;exec = ~/bin/gputemp.sh
+exec = nvidia-smi --format=nounits,csv,noheader --query-gpu=temperature.gpu | xargs echo
+tail = true
+format = <label>
+format-prefix = "GPU "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #e76f51
 
 
 
