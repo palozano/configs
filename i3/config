@@ -90,7 +90,8 @@ bindsym $mod+q split toggle
 
 ##### RUN #####
 # start a terminal
-bindsym $mod+Return exec terminator
+#bindsym $mod+Return exec terminator
+bindsym $mod+Return exec kitty
 
 # start a terminal
 bindsym $mod+space exec terminator -e ranger
