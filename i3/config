@@ -258,7 +258,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# NetworkManager system tray GUI for it.
+# Redshift tray.
 exec --no-startup-id redshift-gtk
 
 # Run PulseAudio and the systemtray icon
