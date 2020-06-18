@@ -4,7 +4,6 @@ dask/
 spotify/
 xarchiver/
 epdfview/
-redshift.conf
 i3-scrot.conf
 compton.conf
 dmenu-recent/
@@ -113,7 +112,6 @@ dask/
 spotify/
 xarchiver/
 epdfview/
-redshift.conf
 i3-scrot.conf
 compton.conf
 dmenu-recent/

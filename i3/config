@@ -259,7 +259,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Redshift tray.
-exec --no-startup-id redshift-gtk
+#exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift
 
 # Run PulseAudio and the systemtray icon
 #exec --no-startup-id pulseaudio -D
