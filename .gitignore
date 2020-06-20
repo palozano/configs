@@ -4,7 +4,6 @@ dask/
 spotify/
 xarchiver/
 epdfview/
-redshift.conf
 i3-scrot.conf
 compton.conf
 dmenu-recent/
@@ -92,7 +91,6 @@ omf/
 pulse/
 QtProject.conf
 R/
-ranger/
 RStudio/
 skypeforlinux/
 slimbookbattery/
@@ -114,7 +112,6 @@ dask/
 spotify/
 xarchiver/
 epdfview/
-redshift.conf
 i3-scrot.conf
 compton.conf
 dmenu-recent/
@@ -202,7 +199,6 @@ omf/
 pulse/
 QtProject.conf
 R/
-ranger/
 RStudio/
 skypeforlinux/
 slimbookbattery/
