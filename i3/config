@@ -94,7 +94,7 @@ bindsym $mod+q split toggle
 bindsym $mod+Return exec kitty
 
 # start a terminal
-bindsym $mod+space exec terminator -e ranger
+bindsym $mod+space exec kitty -e ranger
 
 # launch the browser
 bindsym $mod+Shift+Return exec firefox
