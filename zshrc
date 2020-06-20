@@ -165,6 +165,11 @@ alias lt="exa -T"
 #unalias lsa
 alias tsm="transmission-remote"
 
+# Kitty kittens
+alias icat="kitty +kitten icat"
+alias d="kitty +kitten diff"
+
+
 #ZSH_TMUX_AUTOSTART_ONCE="true"
 #ZSH_TMUX_AUTOCONNECT="true"
 

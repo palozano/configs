@@ -100,7 +100,8 @@ bindsym $mod+space exec terminator -e ranger
 bindsym $mod+Shift+Return exec firefox
 
 # launch rofi (commas are written as #)
-bindsym $mod+d exec rofi -combi-modi window#run#sh -theme solarized -font "Dejavu Sans Mono 11" -show combi
+#bindsym $mod+d exec rofi -combi-modi window#run#sh -theme Monokai -font "Dejavu Sans Mono 11" -show combi
+bindsym $mod+d exec rofi -show combi
 
 # block screen
 bindsym $mod+0 exec i3lock -c 000000
