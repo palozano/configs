@@ -97,7 +97,8 @@ bindsym $mod+Return exec kitty
 bindsym $mod+space exec kitty -e ranger
 
 # launch the browser
-bindsym $mod+Shift+Return exec firefox
+#bindsym $mod+Shift+Return exec firefox
+bindsym $mod+Shift+Return exec firefox-developer-edition
 
 # launch rofi (commas are written as #)
 #bindsym $mod+d exec rofi -combi-modi window#run#sh -theme Monokai -font "Dejavu Sans Mono 11" -show combi
