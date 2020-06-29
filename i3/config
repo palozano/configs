@@ -245,6 +245,9 @@ bindsym $mod+m bar mode toggle
 
 bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl s +10"
 bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl s 10-"
+
+# Make MEGA windows float
+for_window [class="MEGAsync"] floating enable
 ##############
 
 

@@ -10,6 +10,8 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'lervag/vimtex'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
+"let g:vimtex_view_general_viewer = 'open'
+"let g:vimtex_view_general_options = '-a Skim'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
@@ -48,6 +50,9 @@ Plug 'airblade/vim-gitgutter'
 
 " Vim-ghost
 Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+ 
+" Close tags
+Plug 'alvan/vim-closetag'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -60,9 +65,9 @@ syntax enable
 set relativenumber
 set number
 " Use wide tabs
-set shiftwidth=8
-set softtabstop=8
-set tabstop=8
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 set colorcolumn=80
@@ -112,6 +117,18 @@ set foldlevel=99
 set encoding=utf-8
 " Use the system clipboard
 set clipboard=unnamedplus
+
+
+" CLOSING TAGS
+" ===========
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_filetypes = 'html,xhtml,phtml'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+let g:closetag_emptyTags_caseSensitive = 1
+
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
 
 
 " REMAPS
