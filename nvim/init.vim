@@ -46,6 +46,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Vim-gutter
 Plug 'airblade/vim-gitgutter'
 
+" Vim-ghost
+Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 

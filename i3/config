@@ -103,6 +103,7 @@ bindsym $mod+Shift+Return exec firefox-developer-edition
 # launch rofi (commas are written as #)
 #bindsym $mod+d exec rofi -combi-modi window#run#sh -theme Monokai -font "Dejavu Sans Mono 11" -show combi
 bindsym $mod+d exec rofi -show combi
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
 
 # block screen
 bindsym $mod+0 exec i3lock -c 000000
