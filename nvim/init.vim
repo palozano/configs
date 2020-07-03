@@ -48,6 +48,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Vim-gutter
 Plug 'airblade/vim-gitgutter'
 
+" Vim-ghost
+Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+ 
 " Close tags
 Plug 'alvan/vim-closetag'
 
