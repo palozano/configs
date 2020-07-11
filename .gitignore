@@ -217,3 +217,11 @@ vlc/
 wallpapers/
 yelp/
 zathura/
+glib-2.0/
+gtkrc
+gtkrc-2.0
+ksmserverrc
+qalculate/
+session/
+trashrc
+xsettingsd/

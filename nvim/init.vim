@@ -180,12 +180,16 @@ function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
 
-" [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ]
+" left: in second list --> [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ]
+" right: in third list --> ['fileformat', 'fileencoding']
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [  ],
-      \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
+      \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'filetype', 'charvaluehex' ] ],
       \ },
       \ 'component_function': {
       \   'cocstatus': 'coc#status',

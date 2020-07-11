@@ -10,7 +10,8 @@
 [profiles]
   [[default]]
     background_color = "#282828"
-    cursor_color = "#aaaaaa"
+    cursor_color = "#ff00dd"
+    cursor_color_fg = False
     font = Fira Code 11
     foreground_color = "#ebdbb2"
     scrollbar_position = hidden

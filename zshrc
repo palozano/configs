@@ -153,7 +153,7 @@ preexec() {
 #alias zshconfig="mate ~/.zshrc"
 #alias ohmyzsh="mate ~/.oh-my-zsh"
 # Editor
-alias vim="nvim"
+#alias vim="nvim"
 alias vi="nvim"
 # Listing files
 alias ls="exa"
