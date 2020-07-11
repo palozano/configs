@@ -166,6 +166,9 @@ noremap < <<
 vnoremap > >gv
 vnoremap < <gv
 
+" Get out of the terminal
+tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
+
 " GUI ENHANCEMENTS
 " ================
 " Set nice colors for 256 terminal
@@ -181,7 +184,7 @@ function! CocCurrentFunction()
 endfunction
 
 " left: in second list --> [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ]
-" right: in third list --> ['fileformat', 'fileencoding']
+" right: in third list --> ['fileformat', 'fileencoding', 'charvaluehex']
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
@@ -189,7 +192,7 @@ let g:lightline = {
       \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'filetype', 'charvaluehex' ] ],
+      \              [ 'filetype' ] ],
       \ },
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
