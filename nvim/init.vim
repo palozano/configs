@@ -169,6 +169,16 @@ vnoremap < <gv
 " Get out of the terminal
 tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
 
+" Remap <leader>s for Rg search
+noremap <leader>d :Rg
+
+" Open NERDTree with a shortcut
+map <C-n> :NERDTreeToggle<CR>
+
+" Open fzf with <C-p>
+nnoremap <C-p> :<C-u>FZF<CR>
+
+
 " GUI ENHANCEMENTS
 " ================
 " Set nice colors for 256 terminal
@@ -207,9 +217,6 @@ colorscheme gruvbox-material
 "colorscheme monokai
 "colorscheme nord
 
-" Open NERDTree with a shortcut
-map <C-n> :NERDTreeToggle<CR>
-
 " Open NERDTree when opening a folder
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
@@ -219,8 +226,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Use Ripgrep to use grep strings and show results with FZF
-" Remap <leader>s for Rg search
-noremap <leader>s :Rg
 let g:fzf_layout = { 'down': '~35%' }
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
