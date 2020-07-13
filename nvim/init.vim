@@ -212,14 +212,7 @@ let g:lightline = {
 
 "set termguicolors
 set background=dark
-"let g:nord_background = 'medium'
 colorscheme gruvbox-material
-"colorscheme monokai
-"colorscheme nord
-
-" Open NERDTree when opening a folder
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 
 " Open NERDTree when no argument is given
 autocmd StdinReadPre * let s:std_in=1
@@ -253,10 +246,6 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
-" Python host
-"let g:python3_host_prog="/home/pablo/anaconda3/bin/python"
-" Python interpreter
-"let g:python_interpreter="/home/pablo/anaconda3/bin/python"
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
