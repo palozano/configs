@@ -2,7 +2,6 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 set nocompatible               " be improved, required
 filetype off                   " required
 
-
 " VIM-PLUG MANAGER
 " ================
 call plug#begin('~/.config/nvim/plugins')
@@ -19,41 +18,31 @@ let g:vimtex_compiler_progname = 'nvr'
 
 " Better statusline 
 Plug 'itchyny/lightline.vim'
-
 " Colorscheme
 Plug 'sainnhe/gruvbox-material'
 "Plug 'arcticicestudio/nord-vim'
-
 " Clever commenter
 Plug 'scrooloose/nerdcommenter'
-
 "Plug 'sheerun/vim-polyglot'
-
 " File tree in editor
 Plug 'scrooloose/nerdtree'
-
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
-
 "Highlighting sections of writing
 Plug 'junegunn/limelight.vim'
-
 " Real fuzzy search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
 " Conquer Of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Vim-gutter
 Plug 'airblade/vim-gitgutter'
-
 " Vim-ghost
 Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
- 
 " Close tags
 Plug 'alvan/vim-closetag'
-
+" Undo Treee
+Plug 'mbbill/undotree'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -69,10 +58,9 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
-
-set colorcolumn=80
 set autoindent
-
+" For old terminals
+set colorcolumn=80
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,".join(range(120,999),",")
 
@@ -89,7 +77,7 @@ set gdefault
 set nohlsearch
 " Highlight current line
 set cursorline
-
+" Proper line wrap 
 set linebreak
 set ttimeoutlen=0
 set laststatus=2
@@ -135,48 +123,33 @@ let g:closetag_close_shortcut = '<leader>>'
 " ======
 " Remap leader key
 let mapleader = "\<Space>"
-
 " Move between wrapped lines
 noremap <silent> k gk
 noremap <silent> j gj
 noremap <silent> 0 g0
 noremap <silent> $ g$
-
 " ESC wit jj
 :imap jj <Esc>
-
-" No arrow keys --- force yourself to use the home row
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
-
 " Left and right can switch buffers
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
-
 " Toggle to previous buffer
 nnoremap <leader><leader> <c-^>
-
 " Indent with only one stroke
 noremap > >>
 noremap < <<
 vnoremap > >gv
 vnoremap < <gv
-
 " Get out of the terminal
 tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
-
 " Remap <leader>s for Rg search
 noremap <leader>d :Rg
-
 " Open NERDTree with a shortcut
 map <C-n> :NERDTreeToggle<CR>
-
 " Open fzf with <C-p>
 nnoremap <C-p> :<C-u>FZF<CR>
+" Show Undo Tree
+nnoremap <leader>u :UndotreeToggle<CR>
 
 
 " GUI ENHANCEMENTS
