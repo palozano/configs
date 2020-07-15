@@ -4,7 +4,7 @@
   title_transmit_bg_color = "#7f1616"
   title_inactive_bg_color = "#555753"
   title_use_system_font = False
-  title_font = Fira Code 11
+  title_font = FiraCode Nerd Font 11
 [keybindings]
   layout_launcher = <Shift><Super>l
 [profiles]

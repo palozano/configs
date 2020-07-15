@@ -37,12 +37,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Vim-gutter
 Plug 'airblade/vim-gitgutter'
-" Vim-ghost
-Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
 " Close tags
 Plug 'alvan/vim-closetag'
 " Undo Treee
 Plug 'mbbill/undotree'
+" Icons in NERDTree
+Plug 'ryanoasis/vim-devicons'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -105,6 +105,13 @@ set foldlevel=99
 set encoding=utf-8
 " Use the system clipboard
 set clipboard=unnamedplus
+" No bells
+set noerrorbells
+" Smart indent (?)
+set smartindent
+" Lines off in the scroll
+set scrolloff=2
+
 
 
 " CLOSING TAGS
@@ -184,8 +191,8 @@ let g:lightline = {
       \ }
 
 "set termguicolors
-set background=dark
 colorscheme gruvbox-material
+set background=dark
 
 " Open NERDTree when no argument is given
 autocmd StdinReadPre * let s:std_in=1
