@@ -35,8 +35,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Conquer Of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Vim-gutter
+" Git within file
 Plug 'airblade/vim-gitgutter'
+" Git all around
+Plug 'tpope/vim-fugitive'
 " Close tags
 Plug 'alvan/vim-closetag'
 " Undo Treee
