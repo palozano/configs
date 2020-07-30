@@ -154,7 +154,8 @@ tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
 " Remap <leader>s for Rg search
 noremap <leader>d :Rg
 " Open NERDTree with a shortcut
-map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeToggle<CR>
+map <C-n> :30Lexplore<CR>
 " Open fzf with <C-p>
 nnoremap <C-p> :<C-u>FZF<CR>
 " Show Undo Tree
