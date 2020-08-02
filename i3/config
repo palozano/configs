@@ -248,6 +248,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl s 10-"
 
 # Make MEGA windows float
 for_window [class="MEGAsync"] floating enable
+for_window [class="klavaro"] floating enable
 ##############
 
 
