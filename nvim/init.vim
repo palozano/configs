@@ -7,7 +7,7 @@ filetype off                   " required
 call plug#begin('~/.config/nvim/plugins')
 
 Plug 'lervag/vimtex'
-let g:tex_flavor='latex'
+let g:tex_flavor='pdflatex'
 let g:vimtex_view_method='zathura'
 "let g:vimtex_view_general_viewer = 'open'
 "let g:vimtex_view_general_options = '-a Skim'
