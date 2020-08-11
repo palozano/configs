@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/palozano/Downloads/classicthesis'
 let g:netrw_dirhist_7='/home/palozano/Documents/hierarchy_experiment/data_experiments/experiment_2020_07_13/rest_model'
 let g:netrw_dirhist_6='/home/palozano'
 let g:netrw_dirhist_5='/home/palozano/Documents/it_stable/space'
