@@ -2,12 +2,13 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 set nocompatible               " be improved, required
 filetype off                   " required
 
+
 " VIM-PLUG MANAGER
 " ================
 call plug#begin('~/.config/nvim/plugins')
 
 Plug 'lervag/vimtex'
-let g:tex_flavor='pdflatex'
+let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 "let g:vimtex_view_general_viewer = 'open'
 "let g:vimtex_view_general_options = '-a Skim'
@@ -18,33 +19,41 @@ let g:vimtex_compiler_progname = 'nvr'
 
 " Better statusline 
 Plug 'itchyny/lightline.vim'
+
 " Colorscheme
 Plug 'sainnhe/gruvbox-material'
 "Plug 'arcticicestudio/nord-vim'
+
 " Clever commenter
 Plug 'scrooloose/nerdcommenter'
+
 "Plug 'sheerun/vim-polyglot'
+
 " File tree in editor
 Plug 'scrooloose/nerdtree'
+
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
+
 "Highlighting sections of writing
 Plug 'junegunn/limelight.vim'
+
 " Real fuzzy search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 " Conquer Of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Git within file
+
+" Vim-gutter
 Plug 'airblade/vim-gitgutter'
-" Git all around
-Plug 'tpope/vim-fugitive'
+
+" Vim-ghost
+Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+ 
 " Close tags
 Plug 'alvan/vim-closetag'
-" Undo Treee
-Plug 'mbbill/undotree'
-" Icons in NERDTree
-Plug 'ryanoasis/vim-devicons'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -60,9 +69,10 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
-set autoindent
-" For old terminals
+
 set colorcolumn=80
+set autoindent
+
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,".join(range(120,999),",")
 
@@ -79,7 +89,7 @@ set gdefault
 set nohlsearch
 " Highlight current line
 set cursorline
-" Proper line wrap 
+
 set linebreak
 set ttimeoutlen=0
 set laststatus=2
@@ -91,7 +101,8 @@ set diffopt+=iwhite
 " Make diffing better: https://vimways.org/2018/the-power-of-diff/
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
-set colorcolumn=80 " and give me a colored column
+set colorcolumn=80 " give me a colored column
+set textwidth=79 " and cut at 79 chars
 set showcmd " Show (partial) command in status line.
 set mouse=a " Enable mouse usage (all modes) in terminals
 " Sane splits
@@ -107,13 +118,6 @@ set foldlevel=99
 set encoding=utf-8
 " Use the system clipboard
 set clipboard=unnamedplus
-" No bells
-set noerrorbells
-" Smart indent (?)
-set smartindent
-" Lines off in the scroll
-set scrolloff=2
-
 
 
 " CLOSING TAGS
@@ -132,35 +136,36 @@ let g:closetag_close_shortcut = '<leader>>'
 " ======
 " Remap leader key
 let mapleader = "\<Space>"
+
 " Move between wrapped lines
 noremap <silent> k gk
 noremap <silent> j gj
 noremap <silent> 0 g0
 noremap <silent> $ g$
+
 " ESC wit jj
 :imap jj <Esc>
+
+" No arrow keys --- force yourself to use the home row
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+
 " Left and right can switch buffers
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
+
 " Toggle to previous buffer
 nnoremap <leader><leader> <c-^>
+
 " Indent with only one stroke
 noremap > >>
 noremap < <<
 vnoremap > >gv
 vnoremap < <gv
-" Get out of the terminal
-tnoremap <Esc><Esc> <C-\><C-n>:q!<CR>
-" Remap <leader>s for Rg search
-noremap <leader>d :Rg
-" Open NERDTree with a shortcut
-map <C-m> :NERDTreeToggle<CR>
-map <C-n> :30Lexplore<CR>
-" Open fzf with <C-p>
-nnoremap <C-p> :<C-u>FZF<CR>
-" Show Undo Tree
-nnoremap <leader>u :UndotreeToggle<CR>
-
 
 " GUI ENHANCEMENTS
 " ================
@@ -176,16 +181,12 @@ function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
 
-" left: in second list --> [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ]
-" right: in third list --> ['fileformat', 'fileencoding', 'charvaluehex']
+" [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ]
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [  ],
-      \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'filetype' ] ],
+      \             [ 'readonly', 'filename', 'modified', 'cocstatus', 'currentfunction' ] ]
       \ },
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
@@ -194,14 +195,26 @@ let g:lightline = {
       \ }
 
 "set termguicolors
-colorscheme gruvbox-material
 set background=dark
+"let g:nord_background = 'medium'
+colorscheme gruvbox-material
+"colorscheme monokai
+"colorscheme nord
+
+" Open NERDTree with a shortcut
+map <C-n> :NERDTreeToggle<CR>
+
+" Open NERDTree when opening a folder
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif
 
 " Open NERDTree when no argument is given
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Use Ripgrep to use grep strings and show results with FZF
+" Remap <leader>s for Rg search
+noremap <leader>s :Rg
 let g:fzf_layout = { 'down': '~35%' }
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -229,6 +242,10 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
+" Python host
+"let g:python3_host_prog="/home/pablo/anaconda3/bin/python"
+" Python interpreter
+"let g:python_interpreter="/home/pablo/anaconda3/bin/python"
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -350,3 +367,16 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+" Mapping for Better BibLaTeX (BBT) insert
+function! ZoteroCite()
+  " pick a format based on the filetype (customize at will)
+  let format = &filetype =~ '.*tex' ? 'citep' : 'pandoc'
+  let api_call = 'http://127.0.0.1:23119/better-bibtex/cayw?format='.format.'&brackets=1'
+  let ref = system('curl -s '.shellescape(api_call))
+  return ref
+endfunction
+
+noremap <leader>z "=ZoteroCite()<CR>p
+inoremap <C-z> <C-r>=ZoteroCite()<CR>
